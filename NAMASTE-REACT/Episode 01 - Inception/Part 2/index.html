@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script>
+        // const header = document.createElement("h1");
+        // header.innerHTML = "Hello World from Namaste React";
+        // document.getElementById("root").appendChild(header);
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+
+           // This line uses React's createElement function to create a React element representing an <h1> HTML heading with the text "hello world from React!".
+
+           // Breakdown:
+
+            // React.createElement("h1", {}, "hello world from React!")
+            // "h1": The type of element to create (an HTML <h1> tag).
+            // {}: The props object. Here, it's empty, meaning no attributes or properties are set.
+            // "hello world from React!": The content (children) of the element.
+            // Result:
+            // This creates a virtual DOM node for an <h1> heading with the specified text, which React can later render to the actual DOM.
+
+            // Gotcha:
+            // This is the manual way to create elements in React. In most modern code, you’ll see JSX (<h1>hello world from React!</h1>) instead, which is compiled to this function call.
+            const heading = React.createElement("h1", {}, "hello world from React!");
+
+        
+           
+            
+        // This line initializes a React root and connects it to a DOM element:
+
+       // ```js
+       // const root = ReactDOM.createRoot(document.getElementById("root"));
+       // ```
+
+        // **Step-by-step explanation:**
+
+        // 1. **`document.getElementById("root")`**  
+        //    - This finds the HTML element with the id `"root"` (in your HTML: `<div id="root"></div>`).
+        //    - This is the container where your React app will be rendered.
+
+        // 2. **`ReactDOM.createRoot(...)`**  
+        //    - This is a React 18+ method that creates a "root" for your React application.
+        //    - It enables the new React features like concurrent rendering.
+        //    - It prepares React to manage everything inside the `"root"` div.
+
+        // 3. **`const root = ...`**  
+        //    - The created root is stored in the `root` variable.
+        //    - You use this variable to render React elements into the DOM (e.g., `root.render(...)`).
+
+        // **Summary:**  
+        // This line sets up the connection between React and your HTML page, telling React where to display your app and enabling modern rendering features.
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // This line tells React to render the heading React element inside the DOM node with the id "root":  
+        
+        
+        // Detailed explanation:
+
+        // root is the React root created by ReactDOM.createRoot(...). It manages everything rendered inside the <div id="root"></div> in your HTML.
+        // .render(heading) instructs React to take the virtual DOM element (heading, which is an <h1> with the text "hello world from React!") and display it inside the root container.
+        // React efficiently updates the real DOM to match the structure of the heading element, handling any changes automatically.
+        // Summary:
+        // This line is what actually displays your React content on the web page by rendering the virtual React element into the real DOM.
+
+        root.render(heading);
+    </script>
+</body>
+</html>

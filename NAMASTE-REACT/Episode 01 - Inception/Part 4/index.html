@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Above Root</h1>
+    <div id="root">
+        <h1>Something is here</h1>
+    </div>
+    <h1>Below Root</h1>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./App.js"></script>
+
+    <!--
+        The order in which we import this script is important. Since ReactDOM uses react, so
+        we import react first and then reactDOM.
+
+        Since App.js uses both react and ReactDOM, we import App.js at last.
+    -->
+
+</body>
+</html>
